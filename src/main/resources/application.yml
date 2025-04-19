@@ -2,12 +2,12 @@ spring:
   application:
     name: profile-service
   neo4j:
-    uri: bolt://localhost:7687
+    uri: ${DB_URL:bolt://localhost:7687}
     authentication:
-      username: neo4j
-      password: 12345678
+      username: ${DB_USERNAME:neo4j}
+      password: ${DB_PASSWORD:12345678}
 
 server:
-  port: 8082
+  port: ${SERVER_PORT:8082}
   servlet:
     context-path: /profile
