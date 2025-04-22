@@ -2,6 +2,7 @@ package com.ntp.profile_service.service;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import com.ntp.profile_service.dto.request.ProfileCreationRequest;
@@ -42,6 +43,7 @@ public class UserProfileService {
         log.info("User profile with ID: {} deleted", id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     public List<UserProfileResponse> getAllUserProfiles() {
         List<UserProfile> userProfiles = userProfileRepository.findAll();
         return userProfiles.stream()
