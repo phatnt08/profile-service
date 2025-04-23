@@ -65,7 +65,7 @@ public class GlobalExceptionHandler {
      * @param e the MethodArgumentNotValidException
      * @return a ResponseEntity containing the error response
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "null" })
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse<String>> handleMethodArgumentNotValidException(
             MethodArgumentNotValidException e) {

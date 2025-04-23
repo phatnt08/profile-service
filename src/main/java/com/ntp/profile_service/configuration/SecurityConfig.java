@@ -22,7 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     // Public endpoints that do not require authentication
-    private final String[] PUBLIC_ENDPOINTS = {};
+    private final String[] PUBLIC_ENDPOINTS = { "internal/users" };
 
     @Autowired
     private CustomJwtDecoder customJwtDecoder;
